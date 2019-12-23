@@ -2,7 +2,7 @@
 
 ## How to use
 
-- clone this repo.
+- clone this repo with `git clone https://github.com/lucasnaja/rename-music-files-y2mate.git`.
 - move the music files downloaded by y2mate.com into the cloned repo.
 - type `node index.js` or just `node .`
 
