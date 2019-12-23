@@ -3,7 +3,7 @@
 ## How to use
 
 - clone this repo.
-- move the mp3 files into the cloned repo.
+- move the music files into the cloned repo.
 - type `node index.js` or just `node .`
 
 ## Example
