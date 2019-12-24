@@ -18,7 +18,7 @@ fs.readdir(__dirname, (err, files) => {
                 await fs.copyFile(
                     path.join(__dirname, file),
                     path.join(__dirname, `./output/${newName}${extension}`),
-                    () => console.log(`\x1b[31m${file}\x1b[0m moved to output folder as \x1b[32m${newName}${extension}\x1b[0m`)
+                    () => console.log(`\x1b[31m${file}\x1b[0m \x1b[37mmoved to output folder as\x1b[0m \x1b[32m${newName}${extension}\x1b[0m`)
                 )
             }
         })
