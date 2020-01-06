@@ -1,0 +1,8 @@
+{
+    "name": "rename-music-files-y2mate",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:lucasnaja/rename-music-files-y2mate.git",
+    "author": "Lucas Bittencourt <lucasnaja0@gmail.com>",
+    "license": "MIT"
+}
