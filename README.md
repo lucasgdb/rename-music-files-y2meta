@@ -2,9 +2,10 @@
 
 ## How to use
 
-- clone this repo: `git clone https://github.com/lucasnaja/rename-music-files-y2mate.git`
-- move the music files downloaded by y2mate.com into the cloned repo.
-- type `node src/index.js` or just `node .`
+-  clone this repo: `git clone https://github.com/lucasnaja/rename-music-files-y2mate.git`
+-  Make a new dir named `input`.
+-  move the music files downloaded by y2mate.com into the made dir.
+-  type `yarn convert` to convert the downloaded songs.
 
 ## Example
 
@@ -19,6 +20,7 @@ to
 ## Author
 
 | [<img src="https://avatars3.githubusercontent.com/u/13838273?v=3&s=115"><br><sub>@lucasgdb</sub>](https://github.com/lucasgdb) |
-| :---: |
+| :----------------------------------------------------------------------------------------------------------------------------: |
+
 
 Feel free to open pull requests to improve it.
