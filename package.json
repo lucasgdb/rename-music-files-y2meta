@@ -1,8 +1,35 @@
 {
-    "name": "rename-music-files-y2mate",
-    "version": "1.0.0",
-    "main": "src/index.js",
-    "repository": "git@github.com:lucasnaja/rename-music-files-y2mate.git",
-    "author": "Lucas Bittencourt <lucasnaja0@gmail.com>",
-    "license": "MIT"
+	"name": "rename-music-files-y2mate",
+	"private": true,
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"license": "MIT",
+	"repository": "git@github.com:lucasnaja/rename-music-files-y2mate.git",
+	"author": "Lucas Bittencourt <lucasgdbittencourt@gmail.com>",
+	"scripts": {
+		"convert": "sucrase-node src/index.ts",
+		"build": "babel src --out-dir dist --copy-files --extensions '.ts'",
+		"start": "node ."
+	},
+	"dependencies": {
+		"beautify.log": "^2.1.1",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"mongoose": "^5.9.3"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.8.4",
+		"@babel/core": "^7.8.7",
+		"@babel/preset-env": "^7.8.7",
+		"@babel/preset-typescript": "^7.8.3",
+		"@types/cors": "^2.8.6",
+		"@types/express": "^4.17.3",
+		"@types/mongoose": "^5.7.3",
+		"@types/node": "^13.9.1",
+		"babel-preset-minify": "^0.5.1",
+		"sucrase": "^3.12.1",
+		"tslint": "^6.0.0",
+		"tslint-config-prettier": "^1.18.0",
+		"typescript": "^3.8.3"
+	}
 }
