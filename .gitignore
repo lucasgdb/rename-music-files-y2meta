@@ -1,6 +1,5 @@
-*.mp3
-*.mp4
-*.3gp
-*.m4a
-*.webm
+node_modules
 dist
+yarn-error.log
+output
+input
