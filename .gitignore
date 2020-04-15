@@ -1,5 +1,6 @@
 node_modules
 dist
 yarn-error.log
-output
-input
+output/*
+input/*
+!.gitkeep
