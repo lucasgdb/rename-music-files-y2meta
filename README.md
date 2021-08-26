@@ -2,7 +2,7 @@
 
 ## How to use
 
--  clone this repo: `git clone https://github.com/lucasnaja/rename-music-files-y2mate.git`
+-  clone this repo: `git clone https://github.com/lucasgdb/rename-music-files-y2mate.git`
 -  Make a new dir named `input`.
 -  move the music files downloaded by y2mate.com into the made dir.
 -  type `yarn` to install its dependencies.
