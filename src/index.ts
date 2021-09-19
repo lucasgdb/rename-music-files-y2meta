@@ -2,50 +2,51 @@ import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
 
+function logCopiedFiles(fileName: string, newFileName: string) {
+   console.info(
+      `${chalk.red(fileName)} ${chalk.white('->')} ${chalk.green(newFileName)}`
+   );
+}
+
 function convert() {
    const inputPath = path.resolve(__dirname, '..', 'input');
 
    if (!fs.existsSync(inputPath)) {
-      // eslint-disable-next-line no-console
-      console.warn(
-         `${chalk.red(
-            'Make'
-         )} a new dir named 'input' and move the downloaded songs inside it.`
-      );
-
-      return;
+      fs.mkdirSync('input');
    }
 
    fs.readdir(inputPath, (err, files) => {
-      if (err) throw new Error(err.message);
+      if (err) {
+         throw new Error(err.message);
+      }
 
       const outputPath = path.resolve(__dirname, '..', 'output');
       if (!fs.existsSync(outputPath)) {
          fs.mkdirSync('output');
       }
 
-      const musicFiles = files.filter((file) => {
-         const musicFileExtension = path.extname(file);
-         const musicFilesExtensions = ['.mp3', '.mp4', '3gp', '.m4a', '.webm'];
-         return musicFilesExtensions.includes(musicFileExtension);
+      const songFileNames = files.filter((file) => {
+         const songFileExtension = path.extname(file);
+         const songFilesExtensions = ['.mp3', '.mp4', '3gp', '.m4a', '.webm'];
+         return songFilesExtensions.includes(songFileExtension);
       });
 
-      musicFiles.forEach((musicFile) => {
-         const newFile = musicFile
-            .replace('y2mate.com - ', '')
-            .replace(/ {2}/g, ' ');
+      if (songFileNames.length === 0) {
+         console.warn(chalk.red('Please copy song files to "input" folder.'));
+         return;
+      }
+
+      songFileNames.forEach((songFileName) => {
+         const newFileName = songFileName
+            .replace('y2meta.com - ', '')
+            .replace(/ {2,}/g, ' ')
+            .replace(/ \([\d]{3,4} kbps\)/g, '')
+            .replace(/ \([A-Z]{1,}\)/gi, '');
 
          fs.copyFile(
-            path.resolve(__dirname, '..', 'input', musicFile),
-            path.resolve(__dirname, '../output/', newFile),
-            () => {
-               // eslint-disable-next-line no-console
-               console.info(
-                  `${chalk.red(musicFile)} ${chalk.white('->')} ${chalk.green(
-                     newFile
-                  )}`
-               );
-            }
+            path.resolve(__dirname, '..', 'input', songFileName),
+            path.resolve(__dirname, '../output/', newFileName),
+            () => logCopiedFiles(songFileName, newFileName)
          );
       });
    });
