@@ -1,17 +1,17 @@
-# Rename Music Files from Y2Mate
+# Rename Music Files from Y2Meta
 
 ## How to use
 
--   clone this repo: `git clone https://github.com/lucasgdb/rename-music-files-y2mate.git`
--   type `yarn` to install its dependencies.
--   move the music files downloaded by y2mate.com into `input` dir.
--   type `yarn convert` to rename the downloaded songs into `output` dir.
+-  clone this repo: `git clone https://github.com/lucasgdb/rename-music-files-y2meta.git`
+-  type `yarn` to install its dependencies.
+-  move the music files downloaded by y2meta.com into `input` dir.
+-  type `yarn convert` to rename the downloaded songs into `output` dir.
 
 ## Example
 
 from
 
-`y2mate.com - Luis Fonsi - Despacito ft. Daddy Yankee.mp3`
+`y2meta.com - Luis Fonsi - Despacito ft. Daddy Yankee.mp3`
 
 to
 
